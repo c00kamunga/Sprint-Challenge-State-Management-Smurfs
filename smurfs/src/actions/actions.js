@@ -21,3 +21,19 @@ export function getSmurfs() {
       });
   };
 }
+
+export function addSmurf(payload){
+    return(dispatch) => {
+        dispatch({type: ADDSMURF_START})
+        
+        axios.post('http://localhost:3333/smurfs', payload)
+        .then((res) => {
+            console.log(addSmurf)
+            dispatch ({type: ADDSMURF_SUCCESS, payload: res.data})
+        })
+        .catch((err) => {
+            console.log(err)
+            dispatch({type: ADDSMURF_FAILED, payload: err.response.data})
+        })
+    }
+}
