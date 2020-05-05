@@ -22,34 +22,58 @@ In this challenge, you are to build a Smurfs village utilizing context or Redux 
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] What problem does the context API help solve?
-- [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
-- [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
-- [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
-- [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+- [x] What problem does the context API help solve?
+
+A: Context API is a where data is stored on a context object. If a child component needs props passed down from a parent component, all it needs it data to be passed in from the context object and no longer requiring prop drilling.
+
+- [x] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+A: Actions in redux are the source of information for the store. The actions carry a payload of information from application to the store and the actions carry a type to indicate the type of action performed.
+
+A: Reducers are functions that determine changes to an applications state. It takes in previous state and actions in order to execute the next state.
+
+A: The store holds the whole state tree of the application. The only way to chage the state inside is to dispatch an action to it. The store is not a class. It is an object with a few methods on it. To create a store, you pass your root reducing function to createStore.
+
+A: The store is known as the single source of truth is because it where all the state is located for an application using redux.
+
+- [x] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+A: Application state is a state that affects the entirety of the application while component state is a state where it only affects the one component since the state exists within the component level itself. A good time to use one or the other would depend on if you need state to be accessed globally or within a component level.
+
+
+- [x] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+
+A: redux-thunk is a redux middleware that lets your actions creators return a function called a thunk, instead of an action. Thunk returns an action when invoked but it also has access to the redux store's dispatch function, which eans that it can also dispatch other actions. 
+
+
+- [x] What is your favorite state management system you've learned and this sprint? Please explain why!
+
+A: I dont have a favorite state managment system. I like how they're all unique and work in different ways.
+
 
 ## Project Set Up
 
 Follow these steps to set up your project:
 
-- [ ] `fork & clone` this repository.
-- [ ] `cd` into the forked copy of this repository.
-- [ ] **RUN** `npm install` to retrieve all `server-side` the dependencies.
-- [ ] **RUN** `npm start` to get your API up and running on `http://localhost:3333`. This is the **URL** you're going to need to use within your React app in order to make AJAX requests for data.
+- [x] `fork & clone` this repository.
+- [x] `cd` into the forked copy of this repository.
+- [x] **RUN** `npm install` to retrieve all `server-side` the dependencies.
+- [x] **RUN** `npm start` to get your API up and running on `http://localhost:3333`. This is the **URL** you're going to need to use within your React app in order to make AJAX requests for data.
 - [ ] After your API is up and running, you can open chrome and type in `http://localhost:3333/smurfs`. You should see an array with one smurf in it returned to you. This is an array that your **API** will be using to store our Smurf Data.
-- [ ] **LOOK** at your `smurfs` directory and notice it's just a plain ol' React App that we've built using `create-react-app`.
-- [ ] **Open** `src/index.js` to make sure that your app is ready to roll with the proper middleware.
-- [ ] **cd** into `smurfs` and run `npm install` to retrieve the client side dependencies.
-- [ ] **RUN** `npm start` to fire up your React application. There ought to be a pretty little message awaiting you welcoming you to the app. `Follow` the prompting.
+- [x] **LOOK** at your `smurfs` directory and notice it's just a plain ol' React App that we've built using `create-react-app`.
+- [x] **Open** `src/index.js` to make sure that your app is ready to roll with the proper middleware.
+- [x] **cd** into `smurfs` and run `npm install` to retrieve the client side dependencies.
+- [x] **RUN** `npm start` to fire up your React application. There ought to be a pretty little message awaiting you welcoming you to the app. `Follow` the prompting.
 
 **LOOK** at all the files you've been given for this project. One important file to note is `server.js`. This file contains an **API** that you are going to be interfacing with. Below is documentation on how to interact with the **API**.
 
 ## Minimum Viable Product
 
-- [ ] Plan and implement how you are going to manage your state for your application
-- [ ] You _must_ use either context or Redux as your state management system
-- [ ] Once you have planned out your state management system, fetch data from the smurf server and display the data it returns
-- [ ] Add a form to collect info for a new smurf, and make a POST request to the server to add a new smurf to your village
+- [x] Plan and implement how you are going to manage your state for your application
+- [x] You _must_ use either context or Redux as your state management system
+- [x] Once you have planned out your state management system, fetch data from the smurf server and display the data it returns
+- [x] Add a form to collect info for a new smurf, and make a POST request to the server to add a new smurf to your village
 
 ## API documentation
 
@@ -161,3 +185,6 @@ output: [
   }
 ];
 ```
+
+
+((((test commit))))
